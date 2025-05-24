@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Saara 💖</title>
+  <style>
+    .photo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.crown-photo {
+  width: 100px;
+  height: auto;
+  animation: crownBounce 1.5s infinite ease-in-out;
+}
+
+.her-photo {
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#photos {
+  background: linear-gradient(135deg, #ffe3ec, #fce1ff);
+  position: relative;
+  padding-bottom: 100px;
+}
+
+
+    #letter-text {
+  font-size: 1.3em;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  min-height: 300px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #fdf6e3,
+    #fdf6e3 28px,
+    #e0e0e0 29px
+  );
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: #fff0f5;
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffb6c1, #fff0f5, #ffe4e1);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      z-index: 10;
+      position: relative;
+      animation: fadeSlide 1s ease-out;
+    }
+
+    section.active {
+  animation: fadeSlide 1s ease forwards;
+}
+
+
+    section {
+  display: none !important; /* Force hide everything */
+  padding: 40px 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+section.active {
+  display: block !important;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #letter-text {
+      font-size: 1.3em;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      min-height: 300px;
+    }
+
+    .nextBtn {
+      display: none;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #ff69b4;
+      border: none;
+      border-radius: 12px;
+      font-size: 1em;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .nextBtn:hover {
+      background: #ff1493;
+    }
+
+    .adore-list {
+      background: #ffe4e1;
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 1.2em;
+    }
+
+    .adore-list li {
+      margin: 12px 0;
+    }
+
+    .photo-album {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.photo-album img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.photo-album img:hover {
+  transform: scale(1.05);
+}
+
+    /* Final page */
+    #final img {
+      width: 300px;
+      border-radius: 20px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    #final {
+  background: linear-gradient(135deg, #ffb6c1, #fff0f5, #ffe4e1);
+  padding: 50px 20px;
+  text-align: center;
+  animation: fadeSlide 1s ease-out;
+}
+
+.final-heading {
+  font-size: 2.5em;
+  color: #d10068;
+  animation: bounceIn 1s ease-out;
+}
+
+.final-photo-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+  z-index: 1;
+}
+
+.final-photo-container img:last-child {
+  position: relative;
+  z-index: 2;
+}
+
+
+.final-photo-container img {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.crown {
+  position: absolute;
+  width: 60px; /* Smaller than before */
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: crownBounce 1.5s infinite ease-in-out;
+  z-index: 3;
+}
+
+
+@keyframes crownBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+    .crown {
+      position: absolute;
+      width: 100px;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    /* 🎈 Balloon Styling */
+    .balloon-container {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .balloon {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      background: radial-gradient(circle at 20% 20%, #ff69b4, #ff1493);
+      border-radius: 50%;
+      animation: floatUp 10s infinite ease-in;
+      opacity: 0.8;
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 40px;
+      background: #555;
+      left: 50%;
+      top: 60px;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(1); opacity: 0.8; }
+      100% { transform: translateY(-100vh) scale(1.1); opacity: 0; }
+    }
+
+    .balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .balloon:nth-child(3) { left: 50%; animation-delay: 4s; }
+    .balloon:nth-child(4) { left: 70%; animation-delay: 1s; }
+    .balloon:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+    @keyframes confettiFall {
+  0% { transform: translateY(-100vh) rotate(0); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  animation: confettiFall 5s infinite linear;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.confetti:nth-child(odd) { background-color: blue; }
+.confetti:nth-child(even) { background-color: yellow; }
+
+.confetti:nth-child(1) { left: 10%; animation-delay: 0s; }
+.confetti:nth-child(2) { left: 20%; animation-delay: 0.5s; }
+.confetti:nth-child(3) { left: 30%; animation-delay: 1s; }
+.confetti:nth-child(4) { left: 50%; animation-delay: 0.7s; }
+.confetti:nth-child(5) { left: 70%; animation-delay: 1.2s; }
+.confetti:nth-child(6) { left: 85%; animation-delay: 0.9s; }
+
+  </style>
+</head>
+<body>
+
+<div class="balloon-container">
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+</div>
+
+<header>🎉 Happy Birthday, Saara! 🎂</header>
+
+<section id="letter" class="active">
+    <div id="letter-text"></div>
+    <button class="nextBtn" id="nextBtnLetter" onclick="showSection('adore')">Next 🌸</button>
+  </section>  
+  <center>
+
+<section id="adore">
+  <h2>🌟 Things I Adore About You</h2>
+  <ul class="adore-list">
+    <li>✨ The way your eyes light up when you smile.</li>
+    <li>💬 Your little quirks that make you uniquely YOU.</li>
+    <li>🎵 Your laugh — it's seriously better than any playlist.</li>
+    <li>☀️ How you bring sunshine to even cloudy days.</li>
+    <li>📚 The way you talk passionately about the things you love.</li>
+    <li>🌸 Just... being you. And somehow, making it look so easy.</li>
+  </ul>
+  <button class="nextBtn" style="display:block;" onclick="showPhotos()">Next 📸</button>
+</section>
+
+<section id="photos" class="photo-album">
+  <h2>📸 Cute Memories</h2>
+  <img src="pic_1.jpeg" alt="Saara Smiling" />
+  <img src="pic_2.jpeg" alt="Fun Times" />
+  <img src="pic_3.jpeg" alt="Happy Moments" />
+  <audio id="bdayMusic" src="birthday.mp3" preload="auto"></audio>
+  <button class="nextBtn" style="display:block;" onclick="showSection('final')">Next 🎀</button>
+</section>
+
+<section id="final">
+    <h2 class="final-heading">🎊 Wish you a very Happy Birthday, Princess! 👑</h2>
+    <div class="final-photo-container">
+        <div class="photo-wrapper">
+            <img src="pic_crown.jpeg" class="her-photo" alt="Birthday Girl">
+          </div>          
+    </div>
+  </section>
+  
+
+<script>
+  const letterContent = `Hey Saara,
+
+I don’t say this directly — and maybe I never will — but there’s something about you that makes the world feel softer, lighter, and a bit more magical.
+
+You probably have no idea how your presence turns an ordinary day into something worth remembering. You laugh, and suddenly everything feels okay again.
+
+You may never read between the lines, or maybe you will. Either way, I just wanted to leave this note here... as a little memory, and a little secret.
+
+💖`;
+
+  let index = 0;
+  const speed = 40;
+  const textDiv = document.getElementById("letter-text");
+  const nextBtn = document.getElementById("nextBtnLetter");
+
+  function typeWriter() {
+    if (index < letterContent.length) {
+      textDiv.innerHTML += letterContent.charAt(index);
+      index++;
+      setTimeout(typeWriter, speed);
+    } else {
+      nextBtn.style.display = "inline-block";
+    }
+  }
+
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (id === 'photos') {
+  const music = document.getElementById('bdayMusic');
+  music.currentTime = 0;
+}
+
+if(id === "final"){
+    const music = document.getElementById('bdayMusic');
+    music.currentTime = .5;
+    music.play();
+}
+  }
+
+  function showPhotos() {
+    showSection('photos');
+  }
+
+  window.onload = typeWriter;
+</script>
+<div class="confetti"></div>
+<div class="confetti"></div>
+<div class="confetti"></div>
+<div class="confetti"></div>
+<div class="confetti"></div>
+<div class="confetti"></div>
+</center>
+</body>
+</html>
